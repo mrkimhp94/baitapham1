@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    let a = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus]'];
+    let b = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function search(star) {
+        let index;
+        for (let i = 0; i < a.length; i++) {
+            if (star === a[i]) {
+                index = i
+            }
+        }
+        if (index > 0 && index < a.length) {
+            alert(b[index])
+        } else {
+            alert("không xác định")
+        }
+    }
+
+    let x = prompt("nhập vào đây");
+    search(x);
+</script>
+</body>
+</html>
