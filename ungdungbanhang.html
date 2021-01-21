@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> ADD NEW PRODUCT</h3>
+<input type="text" id="txtValue"/>
+<input type="button" id="add" value="Add" onclick="add();"/>
+<h3> Display All Product</h3>
+<div id="result"></div>
+<script>
+    let array = ['Iphone', 'Huawei', 'Samsung']
+
+    function display_array() {
+        let table="";
+        table = "<table>";
+        for (let i = 0; i < array.length; i++) {
+            table += "<tr>" + "<td style='width: 150px'>" + array[i] + "</td>" + "<td>" + "<button type='button' onClick='edit(" + i + ")'>" + "Edit" + "</button>" + "</td>" + "<td>" + "<button type='button' onclick='xoa(" + i + ")'>" + "Delete" + "</button> " + "</td>" + "</tr>";
+        }
+        table = table + "</table>";
+        document.getElementById("result").innerHTML = table
+        return table
+    }
+    display_array()
+
+    function xoa(i) {
+        array.splice(i, 1)
+        document.getElementById("result").innerHTML = display_array()
+
+    }
+    function edit(i){
+        let x = prompt("nhập vào");
+        array.splice(i,1,x)
+        document.getElementById("result").innerHTML = display_array()
+    }
+    function add() {
+        let y = document.getElementById("txtValue")
+        array.push(y.value);
+        document.getElementById("result").innerHTML = display_array()
+    }
+
+
+</script>
+</body>
+</html>

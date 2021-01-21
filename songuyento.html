@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><p id="demo"></p>
+<script>
+
+    function isPrime(x) {
+        if (x < 2) {
+            return false
+        }
+        let N = 2;
+        while (N <= x) {
+            let flag = true;
+            for (let i = 2; i < N; i++) {
+                if (N % i == 0) {
+                    flag = false;
+                    break;
+                }
+                flag = true;
+            }
+            if (flag) {
+                document.getElementById("demo").innerHTML += N + "<br>";
+            }
+            N++;
+        }
+
+    }
+
+    let b = parseInt(prompt("nhập b"))
+    isPrime(b)
+
+</script>
+</body>
+</html>
